@@ -11,11 +11,15 @@ class Game
 	end
 
 	def immunity_challenge
-		@tribes.shuffle.first
+		losing_tribe = @tribes.shuffle.first
+		p "#{losing_tribe} has lost the immunity challenge!"
+		losing_tribe
 	end
 
 	def individual_immunity_challenge
-		@tribes[0].members.shuffle.first
+		immune = @tribes[0].members.shuffle.first
+		p "#{immune} has won the immunity challenge!"
+		immune
 	end
 
 	def clear_tribes
