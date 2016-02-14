@@ -38,6 +38,7 @@ class Jury
 				winner[1] = vote_count
 			end
 		end
+		p "#{winner[0]} has won Survivr!"
 		return winner[0]
 	end
 
