@@ -20,14 +20,14 @@ class Jury
 		@jury_votes = Hash[*finalists.zip([0,0]).flatten]
 		members.each do |member| 
 			vote = finalists.shuffle.first
-			p "#{member.name} has voted for #{vote.name}!"
+			puts "#{member.name.pink} has voted for #{vote.name.yellow}!"
 			@jury_votes[vote] += 1
 		end
 		return @jury_votes
 	end
 
 	def report_votes(final_votes)
-		final_votes.each {|finalist, vote_count| p "#{finalist.name}: #{vote_count}"}
+		final_votes.each {|finalist, vote_count| puts "#{finalist.name.yellow}: #{vote_count}"}
 	end
 
 	def announce_winner(final_votes)
@@ -38,7 +38,7 @@ class Jury
 				winner[1] = vote_count
 			end
 		end
-		p "#{winner[0]} has won Survivr!"
+		puts "The tribe has spoken: #{winner[0].name} has won Survivr!".light_blue
 		return winner[0]
 	end
 
