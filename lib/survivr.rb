@@ -29,7 +29,6 @@ def phase_one
 		voted_off = losing_tribe.tribal_council
 		losing_tribe.remove_from_tribe(voted_off)
 	end
-	p "We are now entering stage 2!"
 end
 
 def phase_two
@@ -38,7 +37,6 @@ def phase_two
 		voted_off = @borneo.tribes[0].tribal_council(immune)
 		@borneo.tribes[0].remove_from_tribe(voted_off)
 	end
-	p "We are now entering stage 3!"
 end
 
 def phase_three
@@ -48,7 +46,6 @@ def phase_three
 		@borneo.tribes[0].remove_from_tribe(voted_off)
 		@jury.add_member(voted_off)
 	end
-	puts "We have selected our #{"finalists".yellow}! Time for the #{"jury's".pink} verdict."
 end
 
 
